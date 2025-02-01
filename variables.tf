@@ -15,6 +15,10 @@ variable "instance_type" {
 variable "min_instances" {
   type    = number
   default = 1
+  validation {
+    condition     = var.min_instances <= var.desired_instances
+    error_message = "Minimum instances must be less than or equal to desired instances"
+  }
 }
 
 variable "max_instances" {
@@ -25,4 +29,8 @@ variable "max_instances" {
 variable "desired_instances" {
   type    = number
   default = 2
+  validation {
+    condition     = var.desired_instances <= var.max_instances
+    error_message = "Desired instances must be less than or equal to maximum instances"
+  }
 }
