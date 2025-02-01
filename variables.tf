@@ -1,28 +1,28 @@
 variable "region" {
-	type = string
-	default = "us-east-1"
+  type    = string
+  default = "us-east-1"
 }
 
 variable "namespace" {
-	type = string
+  type = string
 }
 
 variable "instance_type" {
-	type = string
-	default = "t2.micro"
+  type    = string
+  default = "t2.micro"
 }
 
 variable "min_instances" {
-	type = number
-	default = 1
+  type    = number
+  default = 1
 }
 
 variable "max_instances" {
-	type = number
-	default = 3
+  type    = number
+  default = 3
 }
 
 variable "desired_instances" {
-	type = number
-	default = 2
+  type    = number
+  default = 2
 }

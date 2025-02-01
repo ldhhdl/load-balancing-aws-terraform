@@ -1,27 +1,27 @@
 variable "namespace" {
-    type = string
+  type = string
 }
 
 variable "instance_type" {
-    type = string
+  type = string
 }
 
 variable "desired_instances" {
-    type = number
+  type = number
 }
 
 variable "max_instances" {
-    type = number
+  type = number
 }
 
 variable "min_instances" {
-    type = number
+  type = number
 }
 
 variable "security_group_id" {
-    type = string
+  type = string
 }
 
 variable "subnet_id" {
-    type = string
+  type = string
 }
