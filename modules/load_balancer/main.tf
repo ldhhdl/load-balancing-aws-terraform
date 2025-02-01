@@ -6,11 +6,11 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_autoscaling_attachment" "attachment" {
   autoscaling_group_name = var.autoscaling_group_id
-  alb_target_group_arn   = aws_lb_target_group.target_group.arn
+  lb_target_group_arn   = aws_lb_target_group.target_group.arn
 }
 
 resource "aws_lb" "load_balancer" {
-  name               = "load_balancer"
+  name               = "load-balancer"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.security_group_id]
