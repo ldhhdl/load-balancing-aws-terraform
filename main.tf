@@ -6,7 +6,6 @@ module "security_group" {
     source = "./modules/security_group"
     vpc_id = module.vpc.vpc_id
     vpc_cidr_block = module.vpc.vpc_cidr_block
-    vpc_ipv6_cidr_block = module.vpc.vpc_ipv6_cidr_block
 }
 
 module "autoscaling_group" {
