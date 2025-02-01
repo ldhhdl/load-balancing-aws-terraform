@@ -3,6 +3,7 @@ resource "aws_launch_template" "launch_template" {
   image_id      = "ami-0c614dee691cbbf37"
   instance_type = var.instance_type
   user_data = filebase64("${path.module}/asg_user_data.sh")
+  vpc_security_group_ids = [var.security_group_id]
 }
 
 resource "aws_autoscaling_group" "autoscaling_group" {
