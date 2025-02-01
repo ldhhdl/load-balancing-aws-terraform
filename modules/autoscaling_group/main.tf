@@ -7,7 +7,7 @@ resource "aws_launch_template" "launch_template" {
 }
 
 resource "aws_autoscaling_group" "autoscaling_group" {
-  vpc_zone_identifier = [var.subnet_id]
+  vpc_zone_identifier = var.subnet_ids
   desired_capacity    = var.desired_instances
   max_size            = var.max_instances
   min_size            = var.min_instances

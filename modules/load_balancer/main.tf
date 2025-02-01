@@ -6,7 +6,7 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_autoscaling_attachment" "attachment" {
   autoscaling_group_name = var.autoscaling_group_id
-  lb_target_group_arn   = aws_lb_target_group.target_group.arn
+  lb_target_group_arn    = aws_lb_target_group.target_group.arn
 }
 
 resource "aws_lb" "load_balancer" {
@@ -14,7 +14,7 @@ resource "aws_lb" "load_balancer" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.security_group_id]
-  subnets            = [var.subnet_id]
+  subnets            = var.subnet_ids
 }
 
 resource "aws_lb_listener" "my_alb_listener" {
