@@ -1,5 +1,5 @@
 module "vpc" {
-    source = "./modules/vpc"
+    source = "./modules/networking"
 }
 
 module "security_group" {
