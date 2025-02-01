@@ -5,7 +5,6 @@ module "vpc" {
 module "security_group" {
     source = "./modules/security_group"
     vpc_id = module.vpc.vpc_id
-    vpc_cidr_block = module.vpc.vpc_cidr_block
 }
 
 module "autoscaling_group" {
@@ -16,5 +15,6 @@ module "autoscaling_group" {
     max_instances = var.max_instances
     desired_instances = var.desired_instances
     instance_type = var.instance_type
+    subnet_id = module.vpc.subnet_id
 }
 
