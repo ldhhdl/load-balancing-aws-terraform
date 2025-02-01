@@ -18,3 +18,10 @@ module "autoscaling_group" {
   subnet_id         = module.vpc.subnet_id
 }
 
+module "load_balancer" {
+  source               = "./modules/load_balancer"
+  vpc_id               = module.vpc.vpc_id
+  security_group_id    = module.security_group.security_group_id
+  subnet_id            = module.vpc.subnet_id
+  autoscaling_group_id = module.autoscaling_group.autoscaling_group_id
+}
